@@ -133,6 +133,12 @@ app.get("/lessons/memory-leaks", function(req, res) {
   });
 });
 
-app.listen(3000, function() {
-  console.log("Example app listening on port http://localhost:3000");
+app.post("/checkpost", function(req, res) {
+     console.log('req',req)
+     res.setHeader("Content-Type", "application/json");
+     res.send(JSON.stringify(req.query));
+});
+
+app.listen(5000, function() {
+  console.log("Example app listening on port http://localhost:5000");
 });
